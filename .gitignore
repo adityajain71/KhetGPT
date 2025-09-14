@@ -1,0 +1,29 @@
+﻿# Frontend gitignore
+/khedgpt-frontend/node_modules
+/khedgpt-frontend/.pnp
+/khedgpt-frontend/.pnp.js
+/khedgpt-frontend/coverage
+/khedgpt-frontend/build
+/khedgpt-frontend/.DS_Store
+/khedgpt-frontend/.env
+/khedgpt-frontend/.env.local
+/khedgpt-frontend/.env.development.local
+/khedgpt-frontend/.env.test.local
+/khedgpt-frontend/.env.production.local
+/khedgpt-frontend/npm-debug.log*
+/khedgpt-frontend/yarn-debug.log*
+/khedgpt-frontend/yarn-error.log*
+
+# Backend gitignore
+/khetgpt-backend/__pycache__/
+/khetgpt-backend/venv/
+/khetgpt-backend/.env
+/khedgpt-backend/*.pyc
+/khetgpt-backend/*.pyo
+/khetgpt-backend/app/__pycache__/
+/khetgpt-backend/app/*/__pycache__/
+/khetgpt-backend/app/*/*/__pycache__/
+/khetgpt-backend/app/*/*/*/__pycache__/
+
+# VS Code
+.vscode/
