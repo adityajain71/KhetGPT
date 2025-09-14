@@ -13,7 +13,8 @@ The project consists of two main components:
 
 - Crop disease detection with image analysis
 - User authentication and account management
-- Dark/Light mode support
+- Enhanced dark/light mode support with smooth transitions
+- Improved UI for disease detection results display
 - Mobile responsive design
 
 ## Tech Stack
