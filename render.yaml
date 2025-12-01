@@ -1,0 +1,42 @@
+services:
+  # Backend API Service
+  - type: web
+    name: khetgpt-backend
+    runtime: python
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: khetgpt-backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 30
+
+  # Frontend Static Site
+  - type: web
+    name: khetgpt-frontend
+    runtime: static
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: khedgpt-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+    envVars:
+      - key: NODE_VERSION
+        value: 18
