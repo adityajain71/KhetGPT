@@ -19,11 +19,17 @@
 /khetgpt-backend/venv/
 /khetgpt-backend/.env
 /khedgpt-backend/*.pyc
-/khetgpt-backend/*.pyo
+/khedgpt-backend/*.pyo
 /khetgpt-backend/app/__pycache__/
 /khetgpt-backend/app/*/__pycache__/
 /khetgpt-backend/app/*/*/__pycache__/
 /khetgpt-backend/app/*/*/*/__pycache__/
+/khetgpt-backend/app/ml_models/crop_disease/debug/
+/khetgpt-backend/app/ml_models/crop_disease/uploads/
 
 # VS Code
 .vscode/
+
+# Virtual environment
+.venv/
+venv/
