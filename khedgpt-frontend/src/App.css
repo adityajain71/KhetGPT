@@ -1,0 +1,201 @@
+.App {
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Dark Theme Styles */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #f8f9fa;
+  --bs-border-color: #343a40;
+  color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .bg-white {
+  background-color: #212529 !important;
+}
+
+[data-bs-theme="dark"] .text-dark {
+  color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .text-secondary {
+  color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .text-muted {
+  color: #9ca3af !important;
+}
+
+[data-bs-theme="dark"] h1, 
+[data-bs-theme="dark"] h2, 
+[data-bs-theme="dark"] h3, 
+[data-bs-theme="dark"] h4, 
+[data-bs-theme="dark"] h5, 
+[data-bs-theme="dark"] h6, 
+[data-bs-theme="dark"] p, 
+[data-bs-theme="dark"] strong,
+[data-bs-theme="dark"] .lead,
+[data-bs-theme="dark"] .display-1, 
+[data-bs-theme="dark"] .display-2, 
+[data-bs-theme="dark"] .display-3, 
+[data-bs-theme="dark"] .display-4,
+[data-bs-theme="dark"] .display-5, 
+[data-bs-theme="dark"] .display-6,
+[data-bs-theme="dark"] span:not(.text-success):not(.shimmer-text):not(.text-warning):not(.text-danger):not(.text-primary) {
+  color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(255, 255, 255, 0.075) !important;
+}
+
+[data-bs-theme="dark"] .border-white {
+  border-color: #343a40 !important;
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: #2b3035;
+  border-color: #343a40;
+}
+
+[data-bs-theme="dark"] .bg-light {
+  background-color: #2b3035 !important;
+}
+
+[data-bs-theme="dark"] .form-control, 
+[data-bs-theme="dark"] .form-select {
+  background-color: #2b3035;
+  border-color: #495057;
+  color: #f8f9fa;
+}
+
+/* Add a smoother transition between themes */
+body, 
+.card, 
+.bg-white, 
+.border-white, 
+.text-dark, 
+.shadow-sm, 
+.btn, 
+h1, h2, h3, h4, h5, h6, p, span, 
+.text-secondary,
+.text-muted,
+.form-control,
+.form-select,
+.bg-light,
+.nav-link,
+.navbar,
+.dropdown-menu {
+  transition: all 0.3s ease;
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(46, 139, 87, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(46, 139, 87, 0.05) 0%, transparent 20%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Text shimmer effect for titles */
+.shimmer-text {
+  background: linear-gradient(90deg, #2E8B57, #88d498, #2E8B57);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Make shimmer text more visible in dark mode */
+[data-bs-theme="dark"] .shimmer-text {
+  background: linear-gradient(90deg, #4eca78, #a9e6b9, #4eca78);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Add a subtle texture overlay to images */
+.hero-image {
+  position: relative;
+}
+
+.hero-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.05' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Floating card and text styles for dark mode */
+[data-bs-theme="dark"] .floating-card {
+  background-color: rgba(43, 48, 53, 0.9);
+  border-color: #343a40;
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .floating-card h2,
+[data-bs-theme="dark"] .floating-card p,
+[data-bs-theme="dark"] .floating-card span:not(.shimmer-text),
+[data-bs-theme="dark"] .floating-card strong {
+  color: #f8f9fa !important;
+}
+
+/* Ensure emphasis text is visible in dark mode */
+[data-bs-theme="dark"] .text-emphasis,
+[data-bs-theme="dark"] .text-black {
+  color: #f8f9fa !important;
+}
+
+/* Farmer stats section in dark mode */
+[data-bs-theme="dark"] .farmer-stats-section .stat-number,
+[data-bs-theme="dark"] .farmer-stats-section .stat-text {
+  color: #f8f9fa !important;
+}
+
+/* Hero content specific dark mode styling */
+[data-bs-theme="dark"] .hero-content h1,
+[data-bs-theme="dark"] .hero-content h2,
+[data-bs-theme="dark"] .hero-content p {
+  color: #f8f9fa !important;
+}
+
+/* Button styles in dark mode */
+[data-bs-theme="dark"] .btn-outline-dark {
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .btn-outline-dark:hover {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}

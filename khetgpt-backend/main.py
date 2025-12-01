@@ -13,12 +13,12 @@ origins = [
     "http://localhost:3000",  # React development server
     "http://localhost:3002",  # Alternative port if needed
     "http://localhost:5000",  # Production build served locally
-    # Add production domains when deployed
+    "*"  # Allow all origins for Railway deployment (restrict in production)
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],  # Allow all origins for Railway deployment
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -32,4 +32,6 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    import os
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
