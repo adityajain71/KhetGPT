@@ -23,20 +23,13 @@ services:
   # Frontend Static Site
   - type: web
     name: khetgpt-frontend
-    runtime: static
+    runtime: node
     region: oregon
     plan: free
     branch: main
     rootDir: khedgpt-frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./build
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: SAMEORIGIN
-      - path: /*
-        name: X-Content-Type-Options
-        value: nosniff
+    buildCommand: npm ci && npm run build
+    startCommand: npx serve -s build -p $PORT
     envVars:
       - key: NODE_VERSION
         value: 18
